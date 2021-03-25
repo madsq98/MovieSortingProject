@@ -1,14 +1,14 @@
 package com.company;
 
-public class Movie {
+public class Movie implements Comparable<Movie> {
     private int id;
     private String title;
     private String director;
     private String genre;
     private int productionYear;
-    private Double rating;
+    private double rating;
 
-    public Movie(int id, String title, String director, String genre, int productionYear, Double rating) {
+    public Movie(int id, String title, String director, String genre, int productionYear, double rating) {
         this.id = id;
         this.title = title;
         this.director = director;
@@ -21,7 +21,7 @@ public class Movie {
         return id;
     }
 
-    public Double getRating() {
+    public double getRating() {
         return rating;
     }
 
@@ -64,5 +64,10 @@ public class Movie {
     @Override
     public String toString() {
         return "ID: " + id + " Title: " + title + " Director: " + director + " Genre: " + genre + " Production Year: " + productionYear + " Rating: " + rating;
+    }
+
+    @Override
+    public int compareTo(Movie o) {
+        return this.getProductionYear() - o.getProductionYear();
     }
 }

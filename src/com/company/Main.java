@@ -1,5 +1,6 @@
 package com.company;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -16,8 +17,24 @@ public class Main {
 
         Collections.shuffle(lstMovies);
 
+        System.out.println("Shuffled:");
         for(Movie m : lstMovies) {
             System.out.println(m);
         }
+        System.out.println(" ");
+
+        System.out.println("Sorted by Production Year: ");
+        Collections.sort(lstMovies);
+        for(Movie m : lstMovies) {
+            System.out.println(m);
+        }
+        System.out.println(" ");
+
+        System.out.println("Sorted by Rating: ");
+        Collections.sort(lstMovies, new RatingComparator());
+        for(Movie m : lstMovies) {
+            System.out.println(m);
+        }
+        System.out.println(" ");
     }
 }
