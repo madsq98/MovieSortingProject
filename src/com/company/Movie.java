@@ -9,7 +9,7 @@ public class Movie {
     private Double rating;
 
     public Movie(int id, String title, String director, String genre, int productionYear, Double rating) {
-        this id = id;
+        this.id = id;
         this.title = title;
         this.director = director;
         this.genre = genre;
@@ -19,10 +19,6 @@ public class Movie {
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public Double getRating() {
@@ -63,5 +59,10 @@ public class Movie {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    @Override
+    public String toString() {
+        return "ID: " + id + " Title: " + title + " Director: " + director + " Genre: " + genre + " Production Year: " + productionYear + " Rating: " + rating;
     }
 }
