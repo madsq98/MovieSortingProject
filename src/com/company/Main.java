@@ -3,6 +3,7 @@ package com.company;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Main {
@@ -32,6 +33,28 @@ public class Main {
 
         System.out.println("Sorted by Rating: ");
         Collections.sort(lstMovies, new RatingComparator());
+        for(Movie m : lstMovies) {
+            System.out.println(m);
+        }
+        System.out.println(" ");
+
+        System.out.println("Sorted by Title: ");
+        Collections.sort(lstMovies, new TitleComparator());
+        for(Movie m : lstMovies) {
+            System.out.println(m);
+        }
+        System.out.println(" ");
+
+        System.out.println("Sorted by Title Reversed: ");
+        Comparator c = Collections.reverseOrder(new TitleComparator());
+        Collections.sort(lstMovies, c);
+        for(Movie m : lstMovies) {
+            System.out.println(m);
+        }
+        System.out.println(" ");
+
+        System.out.println("Sorted by Title (lambda): ");
+        Collections.sort(lstMovies, (Movie o1, Movie o2)->o1.getTitle().compareTo(o2.getTitle()));
         for(Movie m : lstMovies) {
             System.out.println(m);
         }
