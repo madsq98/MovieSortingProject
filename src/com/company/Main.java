@@ -24,6 +24,13 @@ public class Main {
         }
         System.out.println(" ");
 
+        System.out.println("Sorted by ID: ");
+        Collections.sort(lstMovies,(Movie o1, Movie o2)->o1.getId()-o2.getId());
+        for(Movie m : lstMovies) {
+            System.out.println(m);
+        }
+        System.out.println(" ");
+
         System.out.println("Sorted by Production Year: ");
         Collections.sort(lstMovies);
         for(Movie m : lstMovies) {

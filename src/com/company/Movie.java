@@ -6,7 +6,7 @@ public class Movie implements Comparable<Movie> {
     private String director;
     private String genre;
     private int productionYear;
-    private double rating;
+    private Double rating;
 
     public Movie(int id, String title, String director, String genre, int productionYear, double rating) {
         this.id = id;
@@ -21,7 +21,7 @@ public class Movie implements Comparable<Movie> {
         return id;
     }
 
-    public double getRating() {
+    public Double getRating() {
         return rating;
     }
 
